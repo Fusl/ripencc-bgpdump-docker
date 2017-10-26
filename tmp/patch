@@ -1,0 +1,11 @@
+--- bgpdump_lib.c.orig
++++ bgpdump_lib.c
+@@ -78,7 +78,7 @@
+ static    void asn32_expand_16_to_32(char *dst, char *src, int len);
+
+ #if defined(linux)
+-static    size_t strlcat(char *dst, const char *src, size_t size);
++    size_t strlcat(char *dst, const char *src, size_t size);
+ #endif
+
+ char *bgpdump_version(void) {
