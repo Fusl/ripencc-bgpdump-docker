@@ -1,22 +1,22 @@
---- bgpdump_lib.c.orig
-+++ bgpdump_lib.c
+--- bgpdump.orig/bgpdump_attr.h
++++ bgpdump/bgpdump_attr.h
+@@ -214,7 +214,7 @@
+     pathid_t    path_id;
+ };
+ 
+-#define MAX_PREFIXES 2050
++#define MAX_PREFIXES 4096
+ struct mp_nlri {
+   u_char		nexthop_len;
+ 
+--- bgpdump.orig/bgpdump_lib.c
++++ bgpdump/bgpdump_lib.c
 @@ -78,7 +78,7 @@
  static    void asn32_expand_16_to_32(char *dst, char *src, int len);
-
+ 
  #if defined(linux)
 -static    size_t strlcat(char *dst, const char *src, size_t size);
 +    size_t strlcat(char *dst, const char *src, size_t size);
  #endif
-
+ 
  char *bgpdump_version(void) {
-
---- bgpdump_attr.h.orig
-+++ bgpdump_attr.h
-@@ -214,7 +214,7 @@
-     pathid_t    path_id;
- };
-
--#define MAX_PREFIXES 2050
-+#define MAX_PREFIXES 4096
- struct mp_nlri {
-   u_char               nexthop_len;
